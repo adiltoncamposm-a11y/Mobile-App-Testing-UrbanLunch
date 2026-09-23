@@ -1,0 +1,80 @@
+# Mobile Application – Lunch Delivery QA Testing
+
+## Project Overview
+
+Manual testing of an Android food delivery application. The project focused on validating the complete user flow from selecting a pickup location and ordering dishes to tracking and completing the order.
+
+### Testing Scope
+
+* Pickup point selection
+* Restaurant selection
+* Dish selection and quantity management
+* Dish details
+* Order confirmation
+* Order tracking
+* Delivery time and cooking time
+* Order completion
+* UI and layout validation
+* Screen rotation and state persistence
+* Navigation between screens
+
+### Testing Types
+
+* Functional Testing
+* UI Testing
+* Exploratory Testing
+* Regression Testing
+* Mobile Testing
+* Usability Testing
+
+### Tools
+
+* Android Studio
+* Jira
+* Android Emulator
+* Test Case Design
+* Equivalence Partitioning
+* Boundary Value Analysis
+
+---
+
+## Test Execution Summary
+
+| Metric        | Result |
+| ------------- | -----: |
+| Test Cases    |     32 |
+| Passed        |     26 |
+| Failed        |      6 |
+| Bugs Reported |      6 |
+
+---
+
+# Test Cases
+
+## 1. Selecting a Pickup Location
+
+| ID | Test Case                                                                                      |  Status  | Bug Report                                                   |
+| -: | ---------------------------------------------------------------------------------------------- | :------: | ------------------------------------------------------------ |
+|  1 | Verify that the map displays the pickup point correctly.                                       | ❌ FAILED | [KAN-91](https://adiltoncamposm.atlassian.net/browse/KAN-91) |
+|  2 | Verify that no pickup point is selected by default.                                            | ✅ PASSED | —                                                            |
+|  3 | Verify that tapping a pickup point highlights and selects it.                                  | ✅ PASSED | —                                                            |
+|  4 | Verify that tapping a selected pickup point again cancels the selection.                       | ✅ PASSED | —                                                            |
+|  5 | Verify that tapping a different pickup point changes the selection to the new pickup point.    | ✅ PASSED | —                                                            |
+|  6 | Verify that the dropdown list contains restaurants where the customer can pick up their lunch. | ✅ PASSED | —                                                            |
+|  7 | Verify that selecting a restaurant from the dropdown highlights and selects it on the map.     | ✅ PASSED | —                                                            |
+
+---
+
+## 2. Choice of Dishes
+
+| ID | Test Case                                                                                                           |  Status  | Bug Report |
+| -: | ------------------------------------------------------------------------------------------------------------------- | :------: | ---------- |
+|  8 | Verify that dishes are displayed in a list format.                                                                  | ✅ PASSED | —          |
+|  9 | Verify that each item in the list displays the dish name.                                                           | ✅ PASSED | —          |
+| 10 | Verify that each dish contains a clickable "-" button.                                                              | ✅ PASSED | —          |
+| 11 | Verify that each dish contains a clickable "+" button.                                                              | ✅ PASSED | —          |
+| 12 | Verify that each dish contains a clickable arrow button.                                                            | ✅ PASSED | —          |
+| 13 | Verify that tapping any area of the dish list except the "+" button navigates to the dish details screen.           | ✅ PASSED | —          |
+| 14 | Verify that tapping the "-" button decreases the dish quantity without navigating to the dish details screen.       | ✅ PASSED | —          |
+| 15 | Verify that tapping the "+" button increases the dish quantity without navigating to the dish details screen.       | ✅ PASSED | —          |
+| 16 | Verify that tapping the "+" button adds the dish to the order list from the nearest restaurant to the pickup point. |    ✅ P   |            |
