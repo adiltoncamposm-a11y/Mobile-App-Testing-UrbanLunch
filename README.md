@@ -62,7 +62,7 @@ Bug reports include:
 
 The complete test cases and execution results are available here:
 
-[View Test Cases](./test-cases.md)
+[View Test Cases](https://github.com/adiltoncamposm-a11y/Mobile-App-Testing-UrbanLunch/blob/ea0d3c682ac652b8ac676b4847daedb30f64f489/Mobile%20testing)
 
 ## Key QA Activities
 
