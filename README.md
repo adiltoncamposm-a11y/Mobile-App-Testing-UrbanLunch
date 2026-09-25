@@ -60,7 +60,9 @@ Bug reports include:
 
 ## Test Case Documentation
 
-The complete test cases and execution results are available in the project documentation.
+The complete test cases and execution results are available here:
+
+[View Test Cases](./test-cases.md)
 
 ## Key QA Activities
 
