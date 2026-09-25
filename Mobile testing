@@ -1,187 +1,65 @@
-# Mobile Application – Lunch Delivery QA Testing
-
-## Project Overview
-
-Manual testing of an Android food delivery application. The project focused on validating the complete user flow from selecting a pickup location and ordering dishes to tracking and completing the order.
-
-### Testing Scope
-
-* Pickup point selection
-* Restaurant selection
-* Dish selection and quantity management
-* Dish details
-* Order confirmation
-* Order tracking
-* Delivery time and cooking time
-* Order completion
-* UI and layout validation
-* Screen rotation and state persistence
-* Navigation between screens
-
-### Testing Types
-
-* Functional Testing
-* UI Testing
-* Exploratory Testing
-* Regression Testing
-* Mobile Testing
-* Usability Testing
-
-### Tools
-
-* Android Studio
-* Jira
-* Android Emulator
-* Test Case Design
-* Equivalence Partitioning
-* Boundary Value Analysis
-
----
-
-## Test Execution Summary
-
-| Metric        | Result |
-| ------------- | -----: |
-| Test Cases    |     32 |
-| Passed        |     26 |
-| Failed        |      6 |
-| Bugs Reported |      6 |
-
----
-
-# Test Cases
-
-## 1. Selecting a Pickup Location
-
-| ID | Test Case                                                                                      |  Status  | Bug Report                                                   |
-| -: | ---------------------------------------------------------------------------------------------- | :------: | ------------------------------------------------------------ |
-|  1 | Verify that the map displays the pickup point correctly.                                       | ❌ FAILED | [KAN-91](https://adiltoncamposm.atlassian.net/browse/KAN-91) |
-|  2 | Verify that no pickup point is selected by default.                                            | ✅ PASSED | —                                                            |
-|  3 | Verify that tapping a pickup point highlights and selects it.                                  | ✅ PASSED | —                                                            |
-|  4 | Verify that tapping a selected pickup point again cancels the selection.                       | ✅ PASSED | —                                                            |
-|  5 | Verify that tapping a different pickup point changes the selection to the new pickup point.    | ✅ PASSED | —                                                            |
-|  6 | Verify that the dropdown list contains restaurants where the customer can pick up their lunch. | ✅ PASSED | —                                                            |
-|  7 | Verify that selecting a restaurant from the dropdown highlights and selects it on the map.     | ✅ PASSED | —                                                            |
-
----
-
-## 2. Choice of Dishes
-
-| ID | Test Case                                                                                                                       |  Status  | Bug Report |
-| -: | ------------------------------------------------------------------------------------------------------------------------------- | :------: | ---------- |
-|  8 | Verify that dishes are displayed in a list format.                                                                              | ✅ PASSED | —          |
-|  9 | Verify that each item in the list displays the dish name.                                                                       | ✅ PASSED | —          |
-| 10 | Verify that each dish contains a clickable "-" button.                                                                          | ✅ PASSED | —          |
-| 11 | Verify that each dish contains a clickable "+" button.                                                                          | ✅ PASSED | —          |
-| 12 | Verify that each dish contains a clickable arrow button.                                                                        | ✅ PASSED | —          |
-| 13 | Verify that tapping any area of the dish list except the "+" button navigates to the dish details screen.                       | ✅ PASSED | —          |
-| 14 | Verify that tapping the "-" button decreases the dish quantity without navigating to the dish details screen.                   | ✅ PASSED | —          |
-| 15 | Verify that tapping the "+" button increases the dish quantity without navigating to the dish details screen.                   | ✅ PASSED | —          |
-| 16 | Verify that tapping the "+" button adds the dish to the order list from the nearest restaurant to the pickup point.             | ✅ PASSED | —          |
-| 17 | Verify that quickly tapping the "+" button multiple times increments the quantity correctly.                                    | ✅ PASSED | —          |
-| 18 | Verify that the map, timer, and dish list preserve their state when the device is rotated between portrait and landscape modes. | ✅ PASSED | —          |
-| 19 | Verify that a "Next" button is displayed in the footer.                                                                         | ✅ PASSED | —          |
-| 20 | Verify that the "Next" button is inactive when there are no dishes in the order list.                                           | ✅ PASSED | —          |
-
----
-
-## 3. Dish Details
-
-| ID | Test Case                                                                                   |  Status  | Bug Report                                                   |
-| -: | ------------------------------------------------------------------------------------------- | :------: | ------------------------------------------------------------ |
-| 21 | Verify that a return arrow is displayed to the left of the dish name.                       | ✅ PASSED | —                                                            |
-| 22 | Verify that tapping the return arrow navigates the user back to the dish list.              | ✅ PASSED | —                                                            |
-| 23 | Verify that the restaurant name is displayed below the dish ingredients.                    | ✅ PASSED | —                                                            |
-| 24 | Verify that a long restaurant name does not overlap or become blocked by other UI elements. | ❌ FAILED | [KAN-92](https://adiltoncamposm.atlassian.net/browse/KAN-92) |
-| 25 | Verify that the correct dish name, price, and quantity are added to the order list.         | ✅ PASSED | —                                                            |
-
----
-
-## 4. Order Confirmation
-
-| ID | Test Case                                                                               |  Status  | Bug Report                                                   |
-| -: | --------------------------------------------------------------------------------------- | :------: | ------------------------------------------------------------ |
-| 26 | Verify that the dish list is scrollable when all items do not fit on the screen.        | ✅ PASSED | —                                                            |
-| 27 | Verify that the total amount includes the price of all selected dishes.                 | ✅ PASSED | —                                                            |
-| 28 | Verify that the total amount includes the delivery cost.                                | ❌ FAILED | [KAN-93](https://adiltoncamposm.atlassian.net/browse/KAN-93) |
-| 29 | Verify that tapping the "Order" button navigates the user to the order tracking screen. | ✅ PASSED | —                                                            |
-
----
-
-## 5. Order Tracking – Pickup
-
-| ID | Test Case                                                                                               |  Status  | Bug Report                                                   |
-| -: | ------------------------------------------------------------------------------------------------------- | :------: | ------------------------------------------------------------ |
-| 30 | Verify that all pickup points are displayed on the map.                                                 | ✅ PASSED | —                                                            |
-| 31 | Verify that the map displays the restaurants where the dishes are prepared.                             | ✅ PASSED | —                                                            |
-| 32 | Verify that routes from each restaurant to the pickup point are displayed.                              | ✅ PASSED | —                                                            |
-| 33 | Verify that the cost of all dishes from each restaurant is displayed correctly.                         | ✅ PASSED | —                                                            |
-| 34 | Verify that the remaining cooking time from each restaurant to the pickup point is displayed correctly. | ❌ FAILED | [KAN-94](https://adiltoncamposm.atlassian.net/browse/KAN-94) |
-| 35 | Verify that the remaining delivery time from each restaurant to the pickup point is displayed.          | ✅ PASSED | —                                                            |
-| 36 | Verify that the order tracking list becomes scrollable when all items do not fit on the screen.         | ✅ PASSED | —                                                            |
-
----
-
-## 6. Order Delivered
-
-| ID | Test Case                                                                                    |  Status  | Bug Report                                                   |
-| -: | -------------------------------------------------------------------------------------------- | :------: | ------------------------------------------------------------ |
-| 37 | Verify that the "Order is Delivered" screen appears automatically when the timer expires.    | ✅ PASSED | —                                                            |
-| 38 | Verify that a map is displayed on the screen.                                                | ✅ PASSED | —                                                            |
-| 39 | Verify that the map displays the selected pickup point location.                             | ✅ PASSED | —                                                            |
-| 40 | Verify that pickup point locations match the specified UI/layout requirements.               | ❌ FAILED | [KAN-95](https://adiltoncamposm.atlassian.net/browse/KAN-95) |
-| 41 | Verify that the "I got the order" button is clickable.                                       | ✅ PASSED | —                                                            |
-| 42 | Verify that the order is marked as complete when the user taps the "I got the order" button. | ✅ PASSED | —                                                            |
-| 43 | Verify that a feedback bar is displayed after completing the order.                          | ✅ PASSED | —                                                            |
-| 44 | Verify that after the feedback bar is displayed, the user is returned to the start screen.   | ❌ FAILED | [KAN-89](https://adiltoncamposm.atlassian.net/browse/KAN-89) |
-
----
-
-# Defects Reported
-
-| Bug ID                                                       | Description                                                                  | Status |
-| ------------------------------------------------------------ | ---------------------------------------------------------------------------- | :----: |
-| [KAN-91](https://adiltoncamposm.atlassian.net/browse/KAN-91) | Pickup point is not displayed correctly on the map.                          |  Open  |
-| [KAN-92](https://adiltoncamposm.atlassian.net/browse/KAN-92) | Long restaurant name overlaps or interferes with other UI elements.          |  Open  |
-| [KAN-93](https://adiltoncamposm.atlassian.net/browse/KAN-93) | Delivery cost is not included correctly in the total amount.                 |  Open  |
-| [KAN-94](https://adiltoncamposm.atlassian.net/browse/KAN-94) | Remaining cooking time is not displayed correctly.                           |  Open  |
-| [KAN-95](https://adiltoncamposm.atlassian.net/browse/KAN-95) | Pickup point locations do not match the specified UI/layout requirements.    |  Open  |
-| [KAN-89](https://adiltoncamposm.atlassian.net/browse/KAN-89) | User is not returned to the start screen after completing the feedback step. |  Open  |
-
----
-
-# Key Testing Activities
-
-During this project, I:
-
-* Analyzed mobile application requirements.
-* Decomposed requirements into testable scenarios.
-* Designed and executed functional test cases.
-* Tested user navigation across multiple screens.
-* Validated pickup point selection and map behavior.
-* Tested quantity controls and rapid user interactions.
-* Tested screen rotation and state persistence.
-* Validated order totals and delivery costs.
-* Tested timers and order tracking functionality.
-* Verified UI behavior with long text.
-* Reported defects in Jira with reproducible test scenarios.
-* Validated expected versus actual behavior.
-
-# Defect Reporting
-
-Defects were documented in Jira with relevant information including:
-
-* Preconditions
-* Steps to reproduce
-* Expected result
-* Actual result
-* Severity/Priority
-* Environment
-* Supporting evidence
-
-# Project Result
-
-The testing covered the complete customer journey from pickup location selection through dish ordering, order tracking, delivery, and order completion.
-
-A total of **6 defects were identified and reported in Jira** during test execution.
-
+Test Cases
+1. Selecting a Pickup Location
+ID	Test Case	Status	Bug Report
+1	Verify that the map displays the pickup point correctly.	❌ FAILED	KAN-91
+2	Verify that no pickup point is selected by default.	✅ PASSED	—
+3	Verify that tapping a pickup point highlights and selects it.	✅ PASSED	—
+4	Verify that tapping a selected pickup point again cancels the selection.	✅ PASSED	—
+5	Verify that tapping a different pickup point changes the selection to the new pickup point.	✅ PASSED	—
+6	Verify that the dropdown list contains restaurants where the customer can pick up their lunch.	✅ PASSED	—
+7	Verify that selecting a restaurant from the dropdown highlights and selects it on the map.	✅ PASSED	—
+2. Choice of Dishes
+ID	Test Case	Status	Bug Report
+8	Verify that dishes are displayed in a list format.	✅ PASSED	—
+9	Verify that each item in the list displays the dish name.	✅ PASSED	—
+10	Verify that each dish contains a clickable "-" button.	✅ PASSED	—
+11	Verify that each dish contains a clickable "+" button.	✅ PASSED	—
+12	Verify that each dish contains a clickable arrow button.	✅ PASSED	—
+13	Verify that tapping any area of the dish list except the "+" button navigates to the dish details screen.	✅ PASSED	—
+14	Verify that tapping the "-" button decreases the dish quantity without navigating to the dish details screen.	✅ PASSED	—
+15	Verify that tapping the "+" button increases the dish quantity without navigating to the dish details screen.	✅ PASSED	—
+16	Verify that tapping the "+" button adds the dish to the order list from the nearest restaurant to the pickup point.	✅ PASSED	—
+17	Verify that quickly tapping the "+" button multiple times increments the quantity correctly.	✅ PASSED	—
+18	Verify that the map, timer, and dish list preserve their state when the device is rotated between portrait and landscape modes.	✅ PASSED	—
+19	Verify that a "Next" button is displayed in the footer.	✅ PASSED	—
+20	Verify that the "Next" button is inactive when there are no dishes in the order list.	✅ PASSED	—
+3. Dish Details
+ID	Test Case	Status	Bug Report
+21	Verify that a return arrow is displayed to the left of the dish name.	✅ PASSED	—
+22	Verify that tapping the return arrow navigates the user back to the dish list.	✅ PASSED	—
+23	Verify that the restaurant name is displayed below the dish ingredients.	✅ PASSED	—
+24	Verify that a long restaurant name does not overlap or become blocked by other UI elements.	❌ FAILED	KAN-92
+25	Verify that the correct dish name, price, and quantity are added to the order list.	✅ PASSED	—
+4. Order Confirmation
+ID	Test Case	Status	Bug Report
+26	Verify that the dish list is scrollable when all items do not fit on the screen.	✅ PASSED	—
+27	Verify that the total amount includes the price of all selected dishes.	✅ PASSED	—
+28	Verify that the total amount includes the delivery cost.	❌ FAILED	KAN-93
+29	Verify that tapping the "Order" button navigates the user to the order tracking screen.	✅ PASSED	—
+5. Order Tracking – Pickup
+ID	Test Case	Status	Bug Report
+30	Verify that all pickup points are displayed on the map.	✅ PASSED	—
+31	Verify that the map displays the restaurants where the dishes are prepared.	✅ PASSED	—
+32	Verify that routes from each restaurant to the pickup point are displayed.	✅ PASSED	—
+33	Verify that the cost of all dishes from each restaurant is displayed correctly.	✅ PASSED	—
+34	Verify that the remaining cooking time from each restaurant to the pickup point is displayed correctly.	❌ FAILED	KAN-94
+35	Verify that the remaining delivery time from each restaurant to the pickup point is displayed.	✅ PASSED	—
+36	Verify that the order tracking list becomes scrollable when all items do not fit on the screen.	✅ PASSED	—
+6. Order Delivered
+ID	Test Case	Status	Bug Report
+37	Verify that the "Order is Delivered" screen appears automatically when the timer expires.	✅ PASSED	—
+38	Verify that a map is displayed on the screen.	✅ PASSED	—
+39	Verify that the map displays the selected pickup point location.	✅ PASSED	—
+40	Verify that pickup point locations match the specified UI/layout requirements.	❌ FAILED	KAN-95
+41	Verify that the "I got the order" button is clickable.	✅ PASSED	—
+42	Verify that the order is marked as complete when the user taps the "I got the order" button.	✅ PASSED	—
+43	Verify that a feedback bar is displayed after completing the order.	✅ PASSED	—
+44	Verify that after the feedback bar is displayed, the user is returned to the start screen.	❌ FAILED	KAN-89
+Defects Reported
+Bug ID	Description	Status
+KAN-91	Pickup point is not displayed correctly on the map.	Open
+KAN-92	Long restaurant name overlaps or interferes with other UI elements.	Open
+KAN-93	Delivery cost is not included correctly in the total amount.	Open
+KAN-94	Remaining cooking time is not displayed correctly.	Open
+KAN-95	Pickup point locations do not match the specified UI/layout requirements.	Open
+KAN-89	User is not returned to the start screen after completing the feedback step.	Open
